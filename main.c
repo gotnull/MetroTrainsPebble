@@ -316,7 +316,7 @@ void menu_select_click_callback(MenuLayer *menu_layer, MenuIndex *cell_index, vo
 				}
 				break;
 				case 1:
-				send_thanks("public-transport-victoria", "1-0");
+				send_thanks("metro-trains", "1-0");
 				show_thanks_window();
 				break;
 			}
