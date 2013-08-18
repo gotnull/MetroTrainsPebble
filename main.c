@@ -3,7 +3,6 @@
  * http://www.getpebble.com/
  *
  * Copyright (C) 2013 Fulvio Cusumano
- * http://www.gotnull.com/
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -46,11 +45,11 @@ typedef struct {
 	char code[3];
 	int status;
 	char name[20];
-} BusLine;
+} TrainLine;
 
 char* line_order = "ALBECRCAFRGLHULIPASASOSTSUUPWEWI";
 
-static BusLine lines[] = {
+static TrainLine lines[] = {
 	{ "AL\0", 0, "Alamein" },
 	{ "BE\0", 0, "Belgrave" },
 	{ "CR\0", 0, "Craigieburn" },
@@ -98,7 +97,7 @@ void menu_draw_header_callback(GContext* ctx, const Layer *cell_layer, uint16_t 
 void menu_draw_row_callback(GContext* ctx, const Layer *cell_layer, MenuIndex *cell_index, void *data);
 void menu_select_click_callback(MenuLayer *menu_layer, MenuIndex *cell_index, void *callback_context);
 void do_status_request();
-BusLine* get_line_by_code(const char* code);
+TrainLine* get_line_by_code(const char* code);
 
 int xatoi (char** str, long* res);
 int state = STATE_UPDATING;
@@ -352,7 +351,7 @@ void http_success(int32_t cookie, int http_status, DictionaryIterator* received,
 				code_str[0] = order[(i * 2)];
 				code_str[1] = order[(i * 2) + 1];
 				
-				BusLine* line = get_line_by_code(code_str);
+				TrainLine* line = get_line_by_code(code_str);
 				
 				if (strcmp(line->code, code_str) != 0) {
 					continue;
@@ -373,7 +372,7 @@ void http_success(int32_t cookie, int http_status, DictionaryIterator* received,
 	}
 }
 
-BusLine* get_line_by_code(const char* code) {
+TrainLine* get_line_by_code(const char* code) {
 	for (int l = 0; l < NUM_LINES; l += 1) {
 		if (strcmp(lines[l].code, code) == 0) {
 			return &lines[l];
