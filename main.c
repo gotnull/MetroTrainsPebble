@@ -129,7 +129,7 @@ void handle_init(AppContextRef ctx) {
 	
 	resource_init_current_app(&APP_RESOURCES);
 	
-	window_init(&window, "London Tube Window");
+	window_init(&window, "Metro Trains Window");
 	window_stack_push(&window, true);
 	
 	create_thanks_window();
