@@ -6,7 +6,7 @@ Metro Trains Live Service Updates straight to your Pebble Watch.
 Metro Trains - Pebble App
 http://www.getpebble.com/
  
-Copyright (C) 2013 Fulvio Cusumano
+Copyright (C) 2013 gotnull
 http://www.gotnull.com/
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
